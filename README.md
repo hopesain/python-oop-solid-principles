@@ -1,1 +1,1 @@
-# python-oop-solid-principles
+# Object Oriented Programming and SOLID Principles in Python
