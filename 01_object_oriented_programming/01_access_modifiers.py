@@ -36,7 +36,6 @@ print(f"badEmailAccess: '{bad_email_access}'")
 proper_email_access = first_user.get_email() # Access the protected attribute like this...
 print(f"properEmailAccess: '{proper_email_access}'")
 
-
 proper_password_access = first_user.get_password() # Access the private attributes like this.
 print(f"properPasswordAccess: '{proper_password_access}'") 
 bad_password_access = first_user.__password # This raises an AttributerError. Strictly private.
