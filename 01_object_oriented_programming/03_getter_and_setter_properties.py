@@ -46,3 +46,18 @@ new_user.password = "abcde"
 new_password = new_user.password
 print(f"newPassword: '{new_password}'")
 
+# As much as the code now looks much cleaner when using @property, the pythonic way. But I just have an opinion that I would not implement them in a production level code.
+# My opinion is solely based on the docs I  have read and interact with our good friend, chatGPT, lol.
+# As you are practicing, kindly read this. https://realpython.com/python-getter-setter/#using-properties-instead-of-getters-and-setters-the-python-way
+
+# When to use Getter and Setter Properties.
+# 1. To enforce validation when assigning values.
+# 2. When you want attributes to be read-only or write-only
+
+# When not to use Getter and Setter Properties.
+# 1. When the operation is CPU or I/O bound.
+# 2. When debugging is needed, properties can hide behavior.
+# 3. When working with inheritance or overriding.
+# 4. When building a public API.
+
+# In summary, To crown it all, In a nutshell, Never use them. That's my take.
