@@ -36,7 +36,7 @@ first_car.stop()
 class BankAccount:
     def __init__(self, account_name: str):
         self.account_name = account_name
-        self.__balance = 0.00
+        self.__balance = 0.00 #Hidden attribute, cannot be accessed directly.
 
     def get_balance(self):
         print(f"Dear {self.account_name} your current balance is MK{self.__balance}")
