@@ -37,3 +37,45 @@ They both have a default behaviour (method), they start and stop.
 
 Want another example, let me think about it first. But for the meantime, let's make the above examples into code. 
 """
+
+# SCHOOL MANAGEMENT SYSTEM EXAMPLE
+
+class User:
+    def __init__(self, firstname: str, lastname: str, username: str, email: str):
+        self.firstname = firstname
+        self.lastname = lastname
+        self.username = username
+        self.email = email 
+
+    def greet_user(self):
+        print(f"Hello {self.firstname.capitalize()} {self.lastname.capitalize()}")
+
+class Student(User):
+    def __init__(self, firstname: str, lastname: str, username: str, email: str, program: str, year_of_study: int):
+        super().__init__(firstname, lastname, username, email)
+        self.program = program
+        self.year_of_study = year_of_study
+
+    def display_student_information(self):
+        self.greet_user() #Inherited method
+        print(f"Program: {self.program}")
+        print(f"Year of Study: {self.year_of_study}")
+
+class Lecturer(User):
+    def __init__(self, firstname: str, lastname: str, username: str, email: str, department: str):
+        super().__init__(firstname, lastname, username, email)
+        self.department = department
+
+    def display_lecturer_information(self):
+        self.greet_user() #Inherited method
+        print(f"You are a lecturer in {self.department}")
+
+
+first_student = Student("John", "Doe", "johndoe", "johndoe@email.com", "Computer Science", 2)
+first_student.display_student_information()
+first_student.greet_user() #Inherited method
+
+first_lecturer = Lecturer("Jane", "Smith", "janesmith", "janesmith@email.com", "Mathematics")
+first_lecturer.display_lecturer_information()
+
+# VEHICLE EXAMPLE

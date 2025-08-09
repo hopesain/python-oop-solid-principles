@@ -4,7 +4,7 @@
 
 
 class Post:
-    count_posts = 0
+    count_posts = 0 #Static attribute
 
     def __init__(self, author: str, content: str):
         self.author = author

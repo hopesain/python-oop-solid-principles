@@ -47,7 +47,7 @@ new_password = new_user.password
 print(f"newPassword: '{new_password}'")
 
 # As much as the code now looks much cleaner when using @property, the pythonic way. But I just have an opinion that I would not implement them in a production level code.
-# My opinion is solely based on the docs I  have read and interact with our good friend, chatGPT, lol.
+# My opinion is solely based on the docs I  have read and interact with our good friend, chatGPT 😂.
 # As you are practicing, kindly read this. https://realpython.com/python-getter-setter/#using-properties-instead-of-getters-and-setters-the-python-way
 
 # When to use Getter and Setter Properties.
