@@ -77,5 +77,47 @@ first_student.greet_user() #Inherited method
 
 first_lecturer = Lecturer("Jane", "Smith", "janesmith", "janesmith@email.com", "Mathematics")
 first_lecturer.display_lecturer_information()
+first_lecturer.greet_user()
+
 
 # VEHICLE EXAMPLE
+class Vehicle:
+    def __init__(self, brand: str, model: str, year: int):
+        self.brand = brand
+        self.model = model
+        self.year = year
+
+    def start(self):
+        print(f"The {self.brand} {self.model} is starting.")
+
+    def stop(self):
+        print(f"The {self.brand} {self.model} is stopping.")
+
+
+class Car(Vehicle):
+    def __init__(self, brand: str, model: str, year: int, number_of_doors: int):
+        super().__init__(brand, model, year)
+        self.number_of_doors = number_of_doors
+
+    def diplay_car_information(self):
+        print(f"Car: {self.brand} {self.model}, Year: {self.year}, Doors: {self.number_of_doors}")
+
+
+class Motorcycle(Vehicle):
+    def __init__(self, brand: str, model: str, year: int, fuel_efficiency: str):
+        super().__init__(brand, model, year)
+        self.fuel_efficiency = fuel_efficiency
+
+    def display_motorcycle_information(self):
+        print(f"Motorcycle: {self.brand} {self.model}, Year: {self.year}, Fuel Efficiency: {self.fuel_efficiency}")
+
+
+first_car = Car("Toyota", "Land Cruiser", 2020, 4)
+first_car.start()
+first_car.diplay_car_information()
+first_car.stop()
+
+first_motorcycle = Motorcycle("Yamaha", "DT 125", 2015, "45 km/l")
+first_motorcycle.start()
+first_motorcycle.display_motorcycle_information()
+first_motorcycle.stop()
