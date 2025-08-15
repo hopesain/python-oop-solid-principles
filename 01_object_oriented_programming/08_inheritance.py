@@ -117,7 +117,11 @@ first_car.start()
 first_car.diplay_car_information()
 first_car.stop()
 
+print(first_car.__dict__)
+
 first_motorcycle = Motorcycle("Yamaha", "DT 125", 2015, "45 km/l")
 first_motorcycle.start()
 first_motorcycle.display_motorcycle_information()
 first_motorcycle.stop()
+
+print(first_motorcycle.__dict__)
