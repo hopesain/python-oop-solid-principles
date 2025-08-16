@@ -65,6 +65,7 @@ user = User("hopesain", "hopesain@email.com")
 print(user.get_user())
 user.update_user("hope_sain", "HopeSainOfficial@email.com")
 print(user.get_user())
+print(f"UserClassDict: '{user.__dict__}'")
 
 email = EmailService()
 email.send_welcome_email(user)
@@ -72,3 +73,55 @@ email.send_welcome_email(user)
 authentication = AuthService()
 authentication.login(user)
 authentication.logout(user)
+
+# Another Example.
+# Imagine you have a file manager.
+
+
+class BadFileManager:
+    def __init__(self, file_name: str):
+        self.file_name = file_name
+
+    def read_file(self):
+        print(f"Opening file: '{self.file_name}'")
+
+    def write_file(self):
+        print(f"Editing file: '{self.file_name}'")
+
+    def compress_file(self):
+        print(f"Compressing file: '{self.file_name}'")
+
+    def decompress_file(self):
+        print(f"Decompressing file: '{self.file_name}'")
+
+"""
+In the above example, your FileManager class has two different responsibilities. 
+It uses the .read() and .write() methods to manage the file. 
+It also deals with ZIP archives by providing the .compress() and .decompress() methods.
+
+This class violates the single-responsibility principle because it has two reasons for changing its internal implementation. 
+To fix this issue and make your design more robust, you can split the class into two smaller, more focused classes, each with its own specific concern:
+"""
+
+class FileManager:
+    def __init__(self, file_name: str):
+        self.file_name = file_name
+    
+    def read_file(self):
+        print(f"Reading file: '{self.file_name}'")
+
+    def write_file(self):
+        print(f"Writing file: '{self.file_name}'")
+
+class ZipFileManager:
+    def __init__(self, file_name):
+        self.file_name = file_name
+
+    def compress_file(self):
+        print(f"Compressing file: '{self.file_name}'")
+
+    def decompress_file(self):
+        print(f"Decompressing file: '{self.file_name}'")
+
+# This is now a better implementation, as for the clientCode then I suppose you have to write it yourself, lol. 😂
+    
