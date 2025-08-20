@@ -40,7 +40,7 @@ If a subclass cannot fully honor the parents' contracts, then restructure your c
 
 from abc import ABC, abstractmethod
 
-class PaymentMethod:
+class PaymentMethod(ABC):
     @abstractmethod
     def pay(self, amount: float) -> str:
         raise NotImplementedError("Subclasses must implement this method")
